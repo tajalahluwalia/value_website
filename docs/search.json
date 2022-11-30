@@ -1,0 +1,100 @@
+[
+  {
+    "objectID": "07_Results.html",
+    "href": "07_Results.html",
+    "title": "Results",
+    "section": "",
+    "text": "Code\nimport pandas as pd\nimport numpy as np\nimport plotly.express as px\n\n# PLOT\ndf = df.sort_values(by = 'secular')\nfig = px.bar(df,y=df.iloc[:,0],x=\"secular\", orientation='h')\nfig.add_hrect(\n        y0=6, y1=12, line_width=0, \n        fillcolor=\"green\", opacity=0.1,\n        annotation_text=\"Secular\", annotation_position=\"top left\",\n        )\nfig.add_hrect(\n        y0=6, y1=-1, line_width=0, \n        fillcolor=\"red\", opacity=0.1,\n        annotation_text=\"Traditional\", annotation_position=\"bottom right\",\n        )\n\nfig.show()\n\n\n\n\n                                                \nFigure 1: ?(caption)\n\n\n\n\n\n\n\n\nCode\nimport pandas as pd\nimport numpy as np\nimport plotly.express as px\n\n# PLOT\ndf = df.sort_values(by = 'self_expression')\nfig = px.bar(df.sort_values(by = 'self_expression'),y=df.iloc[:,0],x=\"self_expression\", orientation='h')\nfig.add_hrect(\n        y0=6, y1=12, line_width=0, \n        fillcolor=\"green\", opacity=0.1,\n        annotation_text=\"Self Expression\", annotation_position=\"top left\",\n        )\nfig.add_hrect(\n        y0=6, y1=-1, line_width=0, \n        fillcolor=\"red\", opacity=0.1,\n        annotation_text=\"Survival\", annotation_position=\"bottom right\",\n        )\n\nfig.show()\n\n\n\n\n                                                \nFigure 2: ?(caption)"
+  },
+  {
+    "objectID": "07_Results.html#country-wise",
+    "href": "07_Results.html#country-wise",
+    "title": "Results",
+    "section": "2.1 Country wise",
+    "text": "2.1 Country wise\n\n\nCode\ngrp_country_yr = pd.read_csv('grp_country_yr.csv')\nfig = px.line(grp_country_yr[grp_country_yr['country'].isin(select_country)]\n        , x=\"year\", y=\"secular\"\n        , hover_name= 'country'             \n        , color='country',markers=True, title='A'\n        )\n\nfig.add_hrect(\n        y0=0, y1=1.5, line_width=0, \n        fillcolor=\"green\", opacity=0.05,\n        annotation_text=\"Secular\", annotation_position=\"top\",\n        )\nfig.add_hrect(\n        y0=0, y1=-1.5, line_width=0, \n        fillcolor=\"red\", opacity=0.05,\n        annotation_text=\"Traditional\", annotation_position=\"bottom\",\n        )\nfig.update_traces(visible='legendonly')\nfig.show()\n\n\nfig = px.line(grp_country_yr[grp_country_yr['country'].isin(select_country)]\n        , x=\"year\", y=\"self_expression\"\n        , hover_name= 'country' \n        , color='country',markers=True\n        )\n\nimport plotly.graph_objects as go\n\nfig.add_hrect(\n        y0=0, y1=1.5, line_width=0, \n        fillcolor=\"green\", opacity=0.05,\n        annotation_text=\"self_expression\", annotation_position=\"top\",\n        )\nfig.add_hrect(\n        y0=0, y1=-1.5, line_width=0, \n        fillcolor=\"red\", opacity=0.05,\n        annotation_text=\"Survival\", annotation_position=\"bottom\",\n        )\nfig.update_traces(visible='legendonly')\nfig.show()"
+  },
+  {
+    "objectID": "07_Results.html#by-sex",
+    "href": "07_Results.html#by-sex",
+    "title": "Results",
+    "section": "2.2 By Sex",
+    "text": "2.2 By Sex\n\n\nCode\ngrp_country_age_sex_yr = pd.read_csv('grp_country_age_sex_yr.csv')\nfig = px.line(grp_country_age_sex_yr[grp_country_age_sex_yr['country'].isin(select_country)]\n        , x=\"year\", y=\"secular\"\n        , hover_name= 'country'             \n        , color='country',markers=True\n        , facet_col = 'sex')\n\nfig.add_hrect(\n        y0=0, y1=1.5, line_width=0, \n        fillcolor=\"green\", opacity=0.05,\n        annotation_text=\"Secular\", annotation_position=\"top\",\n        )\nfig.add_hrect(\n        y0=0, y1=-1.5, line_width=0, \n        fillcolor=\"red\", opacity=0.05,\n        annotation_text=\"Traditional\", annotation_position=\"bottom\",\n        )\nfig.update_traces(visible='legendonly')\nfig.show()\n\n\nfig = px.line(grp_country_age_sex_yr[grp_country_age_sex_yr['country'].isin(select_country)]\n        , x=\"year\", y=\"self_expression\"\n        , hover_name= 'country' \n        , color='country',markers=True\n        , facet_col = 'sex')\n\nimport plotly.graph_objects as go\n\nfig.add_hrect(\n        y0=0, y1=1.5, line_width=0, \n        fillcolor=\"green\", opacity=0.05,\n        annotation_text=\"self_expression\", annotation_position=\"top\",\n        )\nfig.add_hrect(\n        y0=0, y1=-1.5, line_width=0, \n        fillcolor=\"red\", opacity=0.05,\n        annotation_text=\"Survival\", annotation_position=\"bottom\",\n        )\nfig.update_traces(visible='legendonly')\nfig.show()"
+  },
+  {
+    "objectID": "07_Results.html#by-age-group",
+    "href": "07_Results.html#by-age-group",
+    "title": "Results",
+    "section": "2.3 By Age Group",
+    "text": "2.3 By Age Group\n\n\nCode\ngrp_country_age_yr = pd.read_csv('grp_country_age_yr.csv')\nfig = px.line(grp_country_age_yr[grp_country_age_yr['country'].isin(select_country)]\n        , x=\"year\", y=\"secular\"\n        , hover_name= 'country'             \n        , color='country',markers=True\n        , facet_col = 'age')\n\nfig.add_hrect(\n        y0=0, y1=1.5, line_width=0, \n        fillcolor=\"green\", opacity=0.05,\n        annotation_text=\"Secular\", annotation_position=\"top\",\n        )\nfig.add_hrect(\n        y0=0, y1=-1.5, line_width=0, \n        fillcolor=\"red\", opacity=0.05,\n        annotation_text=\"Traditional\", annotation_position=\"bottom\",\n        )\n        \nfig.update_traces(visible='legendonly')\nfig.show()\n\n\nfig = px.line(grp_country_age_yr[grp_country_age_yr['country'].isin(select_country)]\n        , x=\"year\", y=\"self_expression\"\n        , hover_name= 'country' \n        , color='country',markers=True\n        , facet_col = 'age')\n\nimport plotly.graph_objects as go\n\nfig.add_hrect(\n        y0=0, y1=1.5, line_width=0, \n        fillcolor=\"green\", opacity=0.05,\n        annotation_text=\"self_expression\", annotation_position=\"top\",\n        )\nfig.add_hrect(\n        y0=0, y1=-1.5, line_width=0, \n        fillcolor=\"red\", opacity=0.05,\n        annotation_text=\"Survival\", annotation_position=\"bottom\",\n        )\nfig.update_traces(visible='legendonly')\nfig.show()"
+  },
+  {
+    "objectID": "01_introduction.html",
+    "href": "01_introduction.html",
+    "title": "Introduction",
+    "section": "",
+    "text": "This project explores the world value survey. Through exploring the datasets for the previous years, this website aims to discover trends in the data and a visual implentation of the findigs.\n\n\nThe aim of this project is to visualize the chaging values of countries across a period of time. Through the changes, a selection of coutries are explored in order to measure if a change in the poles of the dimensions can be correlated to the change in social, political and economic development.\n\n\n\nThe project has the following hypothesis:\n\n\\(H_0\\) = Change in Values has no social, political and economic effect\n\\(H_1\\) = Change in Values has a social, political and economic effect"
+  },
+  {
+    "objectID": "01_introduction.html#about-world-value-survey",
+    "href": "01_introduction.html#about-world-value-survey",
+    "title": "Introduction",
+    "section": "About World Value Survey",
+    "text": "About World Value Survey\nThe World Values Survey (WVS) is an international research program devoted to the scientific and academic study of social, political, economic, religious and cultural values of people in the world. The project’s goal is to assess which impact values stability or change over time has on the social, political and economic development of countries and societies. The project grew out of the European Values Study and was started in 1981 by its Founder and first President (1981-2013) Professor Ronald Inglehart from the University of Michigan (USA) and his team, and since then has been operating in more than 120 world societies.\n\nThe main research instrument of the project is a representative comparative social survey which is conducted globally every 5 years. Extensive geographical and thematic scope, free availability of survey data and project findings for broad public turned the WVS into one of the most authoritative and widely-used cross-national surveys in the social sciences. At the moment, WVS is the largest non-commercial cross-national empirical time-series investigation of human beliefs and values ever executed.\n\nThe WVS combines two institutional components. From one side, WVS is a scientific program and social research infrastructure that explores people’s values and beliefs. At the same time, WVS comprises an international network of social scientists and researchers from 120 world countries and societies. All national teams and individual researchers involved into the implementation of the WVS constitute the community of Principal Investigators (PIs). All PIs are members of the WVS."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Data Visualization",
+    "section": "",
+    "text": "The two dimensional approach\nRonald Inglehart and Christian Welzel, two political scientists, claim that there are two main aspects of cross-cultural variation in the world:\n\nTraditional values versus Secular-rational values and\nSurvival values versus Self-expression values.\n\nTraditional values: The importance of religion, parent-child relationships, reverence to authority, and traditional family values are stressed by traditional values. These ideals are shared by those who disapprove of suicide, euthanasia, divorce, and abortion. These societies exhibit strong nationalistic tendencies and high levels of national pride.\nSecular-rational values: Traditional values are preferred less than secular-rational ideals. These societies place less value on authority, religion, and traditional family values. Suicide, euthanasia, divorce, and abortion are viewed as somewhat acceptable. (Suicide may not actually be more frequent.)\nSurvival values: Survival values prioritize physical and financial safety. It is associated with a generally ethnocentric viewpoint, low levels of tolerance, and trust.\nSelf-expression values: Values associated with self-expression place a high emphasis on the preservation of the environment, rising aspirations for political and economic engagement, increasing tolerance of foreigners, gays and lesbians, and gender equality."
+  },
+  {
+    "objectID": "05_Methodology_and_Data_analysis.html",
+    "href": "05_Methodology_and_Data_analysis.html",
+    "title": "Methodology and Data Analysis",
+    "section": "",
+    "text": "Code\nimport pandas as pd\ndf2 = pd.read_csv(\"master.csv\")\n\n\n\n\n\n\n\nCode\nX = df2.select_dtypes(include=['float64', \"int64\"]).reset_index(drop=True)\nX.pop('year')\n\ny = df2.select_dtypes(exclude=['float64', \"int64\"]).reset_index(drop=True)\nfirst_column = df2.pop('year')\ny.insert(0, 'year', first_column)"
+  },
+  {
+    "objectID": "05_Methodology_and_Data_analysis.html#hypothesis",
+    "href": "05_Methodology_and_Data_analysis.html#hypothesis",
+    "title": "Methodology and Data Analysis",
+    "section": "2.1 Hypothesis",
+    "text": "2.1 Hypothesis\nThe project has the following hypothesis:\n\n\\(H_0\\) = Change in Values has no social, political and economic effect\n\\(H_1\\) = Change in Values has a social, political and economic effect\n\nIn order to test these hypothesis the project looks at a subgroup of countries that have been subject to social, political and economic change.\nOne unsupervised machine learning approach used for dimensionality reduction is factor analysis. In order to express the common variance, or variation resulting from correlation among the observed variables, this approach constructs factors from the observed variables. It does sound a little technical, so let’s simplify it by dividing it into pizza and slices."
+  },
+  {
+    "objectID": "05_Methodology_and_Data_analysis.html#factor-analysis-process",
+    "href": "05_Methodology_and_Data_analysis.html#factor-analysis-process",
+    "title": "Methodology and Data Analysis",
+    "section": "2.2 Factor Analysis process",
+    "text": "2.2 Factor Analysis process\nFactor analysis involves a number of steps, including:\n\nBartlett’s Test of Sphericity and KMO Test\nDetermining the number of factors\nInterpreting the factors\n\nIn order to carry out the Factor analysis this project leveraes the following python libraries:\n\nfactor_analyzer2\nnumpy3\npandas4\nmatplotlib5\n\n2 https://factor-analyzer.readthedocs.io/en/latest/factor_analyzer.html3 https://numpy.org/doc/4 https://pandas.pydata.org/docs/5 https://matplotlib.org/stable/index.html"
+  },
+  {
+    "objectID": "05_Methodology_and_Data_analysis.html#bartletts-sphericity-test",
+    "href": "05_Methodology_and_Data_analysis.html#bartletts-sphericity-test",
+    "title": "Methodology and Data Analysis",
+    "section": "2.3 Bartlett’s Sphericity Test",
+    "text": "2.3 Bartlett’s Sphericity Test\nThe Bartlett’s test6 determines whether a correlation exists in the provided data. It investigates if the correlation matrix is an identical matrix, which is the null hypothesis (H0). The same matrix has all the same diagonal entries as number 1. The null hypothesis therefore presupposes that there is no association between the variables.6 https://factor-analyzer.readthedocs.io/en/latest/factor_analyzer.html?highlight=calculate_bartlett_sphericity#factor_analyzer.factor_analyzer.calculate_bartlett_sphericity\nBecause factor analysis tries to explain the common variance, or the variation caused by correlation among the variables, we want to reject this null hypothesis. A correlation between the variables is present with a 95% confidence level if the p test statistic value is less than 0.05, indicating that the correlation is not an identical matrix.\n\n\nCode\nfrom factor_analyzer.factor_analyzer import calculate_bartlett_sphericity\n\nchi_square_value, p_value = calculate_bartlett_sphericity(X)\nchi_square_value, p_value\n\n\n(729226.0301912883, 0.0)\n\n\nSince the p test statistic is less than 0.05, we can infer that there is correlation between the variables, which is a clear indication that factor analysis should be used."
+  },
+  {
+    "objectID": "05_Methodology_and_Data_analysis.html#the-kaiser-meyer-olkin-kmo-test",
+    "href": "05_Methodology_and_Data_analysis.html#the-kaiser-meyer-olkin-kmo-test",
+    "title": "Methodology and Data Analysis",
+    "section": "2.4 The Kaiser-Meyer-Olkin (KMO) Test",
+    "text": "2.4 The Kaiser-Meyer-Olkin (KMO) Test\nThe KMO Test calculates the percentage of variance that could be shared by all the variables. Greater proportions are anticipated since they show greater connection between the variables, allowing for the use of dimensionality reduction techniques like factor analysis. KMO score ranges from 0 to 1, and values greater than 0.6 are highly valued. It also serves as a gauge of how well our data lends itself to factor analysis.\n\n\nCode\nfrom factor_analyzer.factor_analyzer import calculate_kmo\n\nkmo_all,kmo_model=calculate_kmo(X)\nkmo_model\n\n\n0.8604554971565004\n\n\nThe overall proportion of variation for the data is greater than 0.80. It demonstrates that there is more correlation in our data and that dimensionality reduction strategies like factor analysis can be used."
+  },
+  {
+    "objectID": "05_Methodology_and_Data_analysis.html#finding-the-amount-of-factors",
+    "href": "05_Methodology_and_Data_analysis.html#finding-the-amount-of-factors",
+    "title": "Methodology and Data Analysis",
+    "section": "2.5 Finding The Amount of Factors",
+    "text": "2.5 Finding The Amount of Factors\nOur dataset has the same amount of variables and components as other datasets. There won’t be much meaningful information regarding the common variance among the variables provided by all the factors. Therefore, we must choose the number of components. The amount of common variance each factor explains can be used to determine the number of factors. In general, we will plot the eigenvalues and the factors.\nSince there are two dimensions each with 2 poles, the number of factors required are 2.\n\n\nCode\n# Create factor analysis object and perform factor analysis for 2 factors\nfrom factor_analyzer.factor_analyzer import FactorAnalyzer\nfa = FactorAnalyzer(n_factors=2, rotation='varimax')\n\n# Possible rotations:\n# - varimax (orthogonal rotation)\n# - promax (oblique rotation)\n# - oblimin (oblique rotation)\n# - oblimax (orthogonal rotation)\n# - quartimin (oblique rotation)\n# - quartimax (orthogonal rotation)\n# - equamax (orthogonal rotation)\n\nfa.fit(X)\nfa.get_factor_variance()\n\neigen_values, vectors = fa.get_eigenvalues()\n\nimport matplotlib.pyplot as plt\n# Create scree plot using matplotlib\nplt.scatter(range(1,X.shape[1]+1),eigen_values)\nplt.plot(range(1,X.shape[1]+1),eigen_values)\nplt.title('Scree Plot')\nplt.xlabel('Factors')\nplt.ylabel('Eigenvalue')\nplt.grid()\nplt.show()"
+  },
+  {
+    "objectID": "03_Data_Explanation.html",
+    "href": "03_Data_Explanation.html",
+    "title": "Data Explanation",
+    "section": "",
+    "text": "2 Sample Data\nWe look at a sample to inspect the data. This steps gives us an early insight into the data that will be used in order to carry out the analysis.\n\n\n\n\n\nRaw Data\n  \n    \n      \n      country\n      year\n      sex\n      age\n      importance_religion\n      sign_petition\n      attend_religious_services\n      religious_person\n      importance_god\n      justifiable_homosexuality\n      justifiable_abortion\n      post_material_index\n      trust_in_people\n      autonomy_index\n      national_identity\n      respect_authority\n    \n  \n  \n    \n      79854\n      India\n      1990\n      Male\n      young_adult\n      2\n      1\n      2\n      1\n      5\n      1\n      5\n      1\n      2\n      0\n      1\n      1\n    \n    \n      240353\n      Trinidad and Tobago\n      2010\n      Male\n      old_adult\n      1\n      2\n      1\n      1\n      10\n      1\n      5\n      1\n      2\n      0\n      2\n      1\n    \n    \n      78063\n      China\n      2018\n      Female\n      old_adult\n      3\n      3\n      8\n      1\n      1\n      1\n      6\n      2\n      1\n      1\n      2\n      1\n    \n    \n      177811\n      Ukraine\n      2020\n      Female\n      old_adult\n      3\n      3\n      7\n      1\n      7\n      3\n      3\n      2\n      2\n      1\n      2\n      2\n    \n    \n      169478\n      Slovenia\n      2011\n      Male\n      middle_aged_adult\n      3\n      1\n      8\n      3\n      1\n      10\n      10\n      2\n      2\n      2\n      3\n      2\n    \n  \n\n\n\n\n\n\n3 Two Dimensions of Variation: Individual Level\nTraditional Values (Secular values emphasizing the opposite1):1 secular = positive pole\nimportance_god\nimportance_religion\nimp_child_qual_religious_faith\njustifiable_abortion\nreligious_person\nSurvival Values (Self-expression values emphasizing the opposite2):2 self-expression = positive pole\nsign_petition\nattend_religious_services\njustifiable_homosexuality\ntrust_in_people\npost_material_index"
+  }
+]
