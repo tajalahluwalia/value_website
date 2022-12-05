@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Exploring World Value Survey - Methodology and Data Analysis</title>
+<title>Exploring World Value Survey - Methodology</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -93,7 +93,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./03_Data_Explanation.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -145,15 +144,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
+    <a class="nav-link active" href="./09_explorer_by_country.html" aria-current="page">Explorer By Country</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./10_explorer_by_sex.html">Explorer By Sex</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./11_explorer_by_age.html">Explorer By Age</a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="./01_introduction.html">Introduction</a>
   </li>  
-  <li class="dropdown-header">
- 07_Results.qmd</li>
   <li class="nav-item">
-    <a class="nav-link active" href="./03_Data_Explanation.html" aria-current="page">Data Explanation</a>
+    <a class="nav-link" href="./03_Data_Explanation.html">Data Explanation</a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./05_Methodology_and_Data_analysis.html">Methodology and Data Analysis</a>
+    <a class="nav-link" href="./05_Methodology.html">Methodology</a>
   </li>  
 </ul>
               <div class="quarto-toggle-container">
@@ -169,7 +175,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Methodology and Data Analysis</h1>
+      <h1 class="quarto-secondary-nav-title">Methodology</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -252,10 +258,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </div>
 </li>
           <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./05_Methodology_and_Data_analysis.html" class="sidebar-item-text sidebar-link active">Methodology and Data Analysis</a>
-  </div>
-</li>
+  05_Methodology_and_Data_analysis.qmd
+  </li>
       </ul>
   </li>
     </ul>
@@ -276,14 +280,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#finding-the-amount-of-factors" id="toc-finding-the-amount-of-factors" class="nav-link" data-scroll-target="#finding-the-amount-of-factors"><span class="toc-section-number">1.5</span>  Finding The Amount of Factors</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/quarto-dev/quarto-demo/edit/main/05_Methodology_and_Data_analysis.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/quarto-dev/quarto-demo/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/quarto-dev/quarto-demo/edit/main/05_Methodology.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/quarto-dev/quarto-demo/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Methodology and Data Analysis</h1>
+<h1 class="title d-none d-lg-block">Methodology</h1>
 </div>
 
 
@@ -398,7 +402,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
-<p><img src="05_Methodology_and_Data_analysis_files/figure-html/cell-5-output-1.png" width="589" height="449"></p>
+<p><img src="05_Methodology_files/figure-html/cell-5-output-1.png" width="589" height="449"></p>
 </div>
 </div>
 
@@ -506,15 +510,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="./03_Data_Explanation.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Data Explanation</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
