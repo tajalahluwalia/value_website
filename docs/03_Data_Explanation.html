@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Data Visualization - Data Explanation</title>
+<title>Exploring World Value Survey - Data Explanation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,6 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./05_Methodology_and_Data_analysis.html" rel="next">
+<link href="./11_explorer_by_age.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -75,7 +76,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Data Visualization</span>
+    <span class="navbar-title">Exploring World Value Survey</span>
     </a>
   </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -86,14 +87,13 @@ ul.task-list li input[type="checkbox"] {
   <li class="nav-item">
     <a class="nav-link" href="./01_introduction.html">Introduction</a>
   </li>  
+  <li class="dropdown-header">
+ 07_Results.qmd</li>
   <li class="nav-item">
     <a class="nav-link active" href="./03_Data_Explanation.html" aria-current="page">Data Explanation</a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./05_Methodology_and_Data_analysis.html">Methodology and Data Analysis</a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./07_Results.html">Results</a>
   </li>  
 </ul>
               <div class="quarto-toggle-container">
@@ -145,12 +145,47 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Looking at the Data</a>
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Exploring the results</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07_factors.html" class="sidebar-item-text sidebar-link">Understanding Factors</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08_visual.html" class="sidebar-item-text sidebar-link">visualization</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09_explorer_by_country.html" class="sidebar-item-text sidebar-link">Explorer By Country</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10_explorer_by_sex.html" class="sidebar-item-text sidebar-link">Explorer By Sex</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11_explorer_by_age.html" class="sidebar-item-text sidebar-link">Explorer By Age</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">World Values</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./03_Data_Explanation.html" class="sidebar-item-text sidebar-link active">Data Explanation</a>
@@ -159,21 +194,6 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./05_Methodology_and_Data_analysis.html" class="sidebar-item-text sidebar-link">Methodology and Data Analysis</a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Exploring the results</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./07_Results.html" class="sidebar-item-text sidebar-link">Results</a>
   </div>
 </li>
       </ul>
@@ -324,115 +344,115 @@ ul.task-list li input[type="checkbox"] {
       <th>year</th>
       <th>sex</th>
       <th>age</th>
-      <th>importance_religion</th>
-      <th>sign_petition</th>
-      <th>attend_religious_services</th>
-      <th>religious_person</th>
-      <th>importance_god</th>
-      <th>justifiable_homosexuality</th>
-      <th>justifiable_abortion</th>
+      <th>religion not important</th>
+      <th>not sign petition</th>
+      <th>not attend religious services</th>
+      <th>not religious person</th>
+      <th>god is important</th>
+      <th>homosexuality justifiable</th>
+      <th>abortion justifiable</th>
+      <th>lack of trust in people</th>
+      <th>national identity not important</th>
+      <th>lack of respect for authority</th>
       <th>post_material_index</th>
-      <th>trust_in_people</th>
       <th>autonomy_index</th>
-      <th>national_identity</th>
-      <th>respect_authority</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>79854</th>
-      <td>India</td>
-      <td>1990</td>
+      <th>57542</th>
+      <td>United States</td>
+      <td>2017</td>
       <td>Male</td>
-      <td>young_adult</td>
+      <td>middle_aged_adult</td>
+      <td>4</td>
+      <td>1</td>
+      <td>4</td>
       <td>2</td>
-      <td>1</td>
-      <td>2</td>
-      <td>1</td>
-      <td>5</td>
-      <td>1</td>
-      <td>5</td>
-      <td>1</td>
-      <td>2</td>
-      <td>0</td>
-      <td>1</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>240353</th>
-      <td>Trinidad and Tobago</td>
-      <td>2010</td>
-      <td>Male</td>
-      <td>old_adult</td>
-      <td>1</td>
-      <td>2</td>
-      <td>1</td>
-      <td>1</td>
+      <td>3</td>
       <td>10</td>
-      <td>1</td>
-      <td>5</td>
+      <td>8</td>
+      <td>2</td>
+      <td>2</td>
       <td>1</td>
       <td>2</td>
       <td>0</td>
-      <td>2</td>
-      <td>1</td>
     </tr>
     <tr>
-      <th>78063</th>
-      <td>China</td>
-      <td>2018</td>
-      <td>Female</td>
-      <td>old_adult</td>
-      <td>3</td>
-      <td>3</td>
-      <td>8</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>6</td>
-      <td>2</td>
-      <td>1</td>
-      <td>1</td>
-      <td>2</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>177811</th>
-      <td>Ukraine</td>
+      <th>16087</th>
+      <td>Canada</td>
       <td>2020</td>
       <td>Female</td>
       <td>old_adult</td>
-      <td>3</td>
-      <td>3</td>
-      <td>7</td>
-      <td>1</td>
-      <td>7</td>
-      <td>3</td>
-      <td>3</td>
-      <td>2</td>
-      <td>2</td>
-      <td>1</td>
-      <td>2</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>169478</th>
-      <td>Slovenia</td>
-      <td>2011</td>
-      <td>Male</td>
-      <td>middle_aged_adult</td>
-      <td>3</td>
+      <td>4</td>
       <td>1</td>
       <td>8</td>
       <td>3</td>
       <td>1</td>
       <td>10</td>
       <td>10</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
+      <td>1</td>
       <td>3</td>
       <td>2</td>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>28918</th>
+      <td>Mexico</td>
+      <td>2000</td>
+      <td>Male</td>
+      <td>young_adult</td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>1</td>
+      <td>8</td>
+      <td>10</td>
+      <td>10</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>12968</th>
+      <td>Canada</td>
+      <td>2000</td>
+      <td>Male</td>
+      <td>old_adult</td>
+      <td>3</td>
+      <td>1</td>
+      <td>6</td>
+      <td>1</td>
+      <td>7</td>
+      <td>10</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>235303</th>
+      <td>Rwanda</td>
+      <td>2012</td>
+      <td>Female</td>
+      <td>old_adult</td>
+      <td>2</td>
+      <td>3</td>
+      <td>8</td>
+      <td>1</td>
+      <td>10</td>
+      <td>1</td>
+      <td>2</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
     </tr>
   </tbody>
 </table>
@@ -560,6 +580,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./11_explorer_by_age.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Explorer By Age</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./05_Methodology_and_Data_analysis.html" class="pagination-link">
